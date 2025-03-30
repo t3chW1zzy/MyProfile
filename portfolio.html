@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Cybersecurity Insights</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Cybersecurity projects</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="portfolio">
+        <h3>Portfolio</h3>
+
+        <!-- Filter Buttons -->
+        <div class="portfolio-filters">
+          <button class="filter-btn" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web-security">
+            Web Security
+          </button>
+          <button class="filter-btn" data-filter="pentesting">
+            Penetration Testing
+          </button>
+          <button class="filter-btn" data-filter="network-security">
+            Network Security
+          </button>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="portfolio-container">
+          <div class="portfolio-item web-security">
+            <img src="project1.jpg" alt="Project 1" />
+            <h4>Web App Security Audit</h4>
+            <p>Conducted security assessments for a financial web app.</p>
+            <a href="#" class="portfolio-btn">View Project</a>
+          </div>
+
+          <div class="portfolio-item pentesting">
+            <img src="project2.jpg" alt="Project 2" />
+            <h4>Penetration Testing Report</h4>
+            <p>Executed ethical hacking for a corporate network.</p>
+            <a href="#" class="portfolio-btn">View Project</a>
+          </div>
+
+          <div class="portfolio-item network-security">
+            <img src="project4.jpg" alt="Project 3" />
+            <h4>Firewall Configuration & Hardening</h4>
+            <p>Configured enterprise-grade firewalls for an organization.</p>
+            <a href="#" class="portfolio-btn">View Project</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      // Portfolio Filter Functionality
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const filter = button.getAttribute('data-filter');
+          portfolioItems.forEach(item => {
+            if (filter === 'all' || item.classList.contains(filter)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    </script>
+    <footer>
+      <p>&copy; 2025 oyells. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
